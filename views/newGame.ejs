@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Game</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>New Game</h1>
+    <form action="/games" method="post" class="edit-form">
+      <div class="form-group">
+        <input type="text" id="title" name="title" placeholder="Title" required>
+      </div>
+      <div class="form-group">
+        <textarea id="description" name="description" placeholder="Description" required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="text" id="type" name="type" placeholder="Type" required>
+      </div>
+      <div class="form-group">
+        <input type="number" id="minimumAge" name="minimumAge" placeholder="Minimum Age" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="pricingHourly" name="pricingHourly" placeholder="Pricing (Hourly)" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="pricingPerGame" name="pricingPerGame" placeholder="Pricing (Per Game)" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="imagePath" name="imagePath" placeholder="Image Path" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="imageAltText" name="imageAltText" placeholder="Image Alt Text" required>
+      </div>
+      <button type="submit" class="btn save-btn">Save</button>
+      <a href="/games" class="btn cancel-btn">Cancel</a>
+    </form>
+  </div>
+</body>
+
+</html>

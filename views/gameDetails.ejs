@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= game.name %> - Game Details</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Game Details</h1>
+
+  <div class="game-details">
+    <img src="/<%= game.image.path %>" alt="<%= game.image.description %>" title="<%= game.image.description %>">
+    <h2>Name: <%= game.name %></h2>
+    <p>Description: <%= game.description %></p>
+    <p>Type: <%= game.type %></p>
+    <p>Minimum Age: <%= game.minimumAge %></p>
+    <p>Pricing (Hourly): <%= game.pricing.hourly %></p>
+    <p>Pricing (Per Game): <%= game.pricing.perGame %></p>
+
+    <!-- Edit button -->
+    <form action="/games/<%= game._id %>/edit" method="get">
+        <button type="submit" style = "background-color: yellow;">Edit game</button>
+    </form>
+    <br>
+
+    <!-- Delete button -->
+    <form action="/games/<%= game._id %>?_method=DELETE" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" style = "background-color: red;">Delete game</button>
+    </form>
+    <br>
+
+    <a href="/games">Back to List</a>
+  </div>
+</body>
+</html>

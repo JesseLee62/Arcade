@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade Games</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h2 id = "home">Home</h2>
+  <h1 id = "arcade">Arcade</h1>
+  <p>This is the list of available games</p>
+  <form action="/games/new" method="get">
+    <button type="submit" class="btn new-game-btn" style = "background-color: lightseagreen;">Add New Game</button>
+  </form>
+    </br>
+  <!-- search and filter -->
+  <form action="/games" method="get">
+    <input type="text" name="title" placeholder="Search by name...">
+    <select name="type">
+      <option value="">No filter</option>
+      <% types.forEach(function(type) { %>
+        <option value="<%= type %>"><%= type %></option>
+      <% }) %>
+    </select>
+    <button type="submit" style = "background-color: rgb(0, 204, 255);">Search</button>
+  </form>
+
+  <!-- show games -->
+  <div id="games-list">
+    <% games.forEach(function(game) { %>
+      <div class="game">
+        <a href="/games/<%= game._id %>">
+          <img src="/<%= game.image.path %>" alt="<%= game.name %>" onerror="this.onerror=null;this.src='/images/default-image.jpg';">
+          <h2><%= game.name %></h2>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+
+</body>
+</html>
